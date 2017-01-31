@@ -1,0 +1,27 @@
+Assume a checksum over a range of integers is defined as follows:
+1. compute the xor of the first N numbers
+2. compute the xor from step 1 with xor of the N-1 numbers starting at S + N
+3. compute the xor from step 2 with xor of the N-2 numbers starting at
+   S + N + N (S + 2N)
+
+and so on. For example, given the starting number 5 and the window length of 3
+(N == 3), we would have:
+XOR of 5 6 7
+XOR of 8 9 (do not include 10)
+XOR of 11 (do not include 12 or 13)
+
+Pictorially:
+5  6 7
+8  9 /10
+11 /12 13
+
+5 ^ 6 ^ 7 ^ 8 ^ 9 ^ 11
+
+For starting at 18 and window 5, we would have:
+18 19 20 21 22
+23 24 25 26 /27
+28 29 30 /31 32
+33 34 /35 36 37
+38 /39 40 41 42
+
+18 ^ 19 ^ 20 ^ 21 ^ 22 ^ 23 ^ 24 ^ 25 ^ 26 ^ 28 ^ 29 ^ 30 ^ 33 ^ 34 ^ 38

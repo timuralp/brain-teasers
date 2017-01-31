@@ -1,0 +1,12 @@
+Given a set of starting nodes and a set of exit nodes find the maximum amount
+that can be transferred between the two sets in a supplied graph.
+
+The graph is defined as an adjacency matrix. For example:
+[[0 0 5 5]
+ [0 0 2 2]
+ [0 0 0 0]
+ [0 0 0 0]]
+
+The sets of starting and exit nodes are rows in the matrix. For example, in
+the above graph, start = {0, 1}, end = {2, 3}, and the maximum flow would be 14
+(5 from 0 -> 2, 5 from 0 -> 3, 2 from 1 -> 2, 2 from 1 -> 3).
